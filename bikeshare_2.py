@@ -171,8 +171,11 @@ def user_stats(df):
 
 
 def display_raw_data(df):
+    # get user input for whether the user want to see the raw data
     view_data = input("Do you want to see the raw data? Enter 'yes' or 'no': ").lower()
     start_loc = 0
+
+    # Display five rows of raw data
     while view_data == 'yes':
         print(df.iloc[start_loc : start_loc + 5])
         start_loc += 5
@@ -193,7 +196,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        display_raw_data(df)
+        display_raw_data(df) #display raw data funcion
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
